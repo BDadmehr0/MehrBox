@@ -1,5 +1,7 @@
 # MehrBox Game
 
+- [Full documents](doc.md)
+
 A simple terminal-based world simulation game built with ncurses.
 
 ## Game Description
