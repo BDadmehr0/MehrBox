@@ -4,7 +4,7 @@
 
 #define MAP_HEIGHT 20
 #define MAP_WIDTH 40
-#define PANEL_WIDTH 30
+#define PANEL_WIDTH 40
 #define MAX_GROWTH_STAGE 3
 #define MAX_HEALTH 5
 #define HUNGER_LIMIT 3
