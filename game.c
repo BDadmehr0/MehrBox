@@ -55,7 +55,7 @@ int has_water_nearby(TileType map[MAP_HEIGHT][MAP_WIDTH], int y, int x) {
 void reset_map(int start_x, int start_y,TileType map[MAP_HEIGHT][MAP_WIDTH]){
   nodelay(stdscr, FALSE);
   
-    mvprintw(start_y + 20, start_x + 4, "Reset map:");  
+    mvprintw(start_y + 20, start_x + 4, "Are you sure?");  
     mvprintw(start_y + 21, start_x + 4, "Yes(Y) No(any_key)");  
     int ans = getch();
     
