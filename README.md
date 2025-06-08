@@ -21,6 +21,9 @@ Manage your farm by planting crops, collecting food, and maintaining your health
 - **Space**: Place selected tile
 - **E**: Pick up food
 - **F**: Eat food (restores health)
+- **D**: Delete tile (Soil, Plant, Water)
+- **R**: Reset map
+- **Y**: Confirm map reset
 - **Q**: Quit game
 
 ## Tile Types

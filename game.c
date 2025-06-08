@@ -52,6 +52,30 @@ int has_water_nearby(TileType map[MAP_HEIGHT][MAP_WIDTH], int y, int x) {
     return 0;
 }
 
+void reset_map(int start_x, int start_y,TileType map[MAP_HEIGHT][MAP_WIDTH]){
+  nodelay(stdscr, FALSE);
+  
+    mvprintw(start_y + 20, start_x + 4, "Are you sure?");  
+    mvprintw(start_y + 21, start_x + 4, "Yes(Y) No(any_key)");  
+    int ans = getch();
+    
+    if(ans == 'Y' || ans == 'y'){
+      for (int y = 0; y < MAP_HEIGHT; y++) {
+          for (int x = 0; x < MAP_WIDTH; x++) {
+            TileType t = map[y][x];
+              if(t != EMPTY){
+                map[y][x] = EMPTY;
+                growth_stage[y][x] = 0;
+              }
+          }
+      }
+    } 
+
+  
+  nodelay(stdscr, TRUE);
+  
+}
+
 void draw_panel(int start_x, int start_y, int width, int height, int day, TileType map[MAP_HEIGHT][MAP_WIDTH], int cursor_y, int cursor_x) {
     for (int y = 0; y <= height; y++) {
         for (int x = 0; x <= width; x++) {
@@ -85,6 +109,9 @@ void draw_panel(int start_x, int start_y, int width, int height, int day, TileTy
     mvprintw(start_y + 15, start_x + 4, "Space - Place");
     mvprintw(start_y + 16, start_x + 4, "E - Pick up, F - Eat food");
     mvprintw(start_y + 17, start_x + 4, "Q - Quit");
+    mvprintw(start_y + 18, start_x + 4, "D - Delete Tile");
+    mvprintw(start_y + 19, start_x + 4, "R - Reset Map");
+    
 }
 
 int main() {
@@ -174,6 +201,7 @@ int main() {
             case 'w': case 'W': selected_tile = WATER; break;
             case 's': case 'S': selected_tile = SOIL; break;
             case 'p': case 'P': selected_tile = PLANT; break;
+            case 'r': case 'R': reset_map(MAP_WIDTH + 3, 0,map); break;
             case ' ': map[cursor_y][cursor_x] = selected_tile;
                       if (selected_tile == PLANT) growth_stage[cursor_y][cursor_x] = 0; break;
             case 'e': case 'E':
@@ -182,6 +210,14 @@ int main() {
                     map[cursor_y][cursor_x] = EMPTY;
                 }
                 break;
+	  case 'd': case 'D':
+                if (map[cursor_y][cursor_x] == SOIL || map[cursor_y][cursor_x] == WATER || map[cursor_y][cursor_x] == PLANT) {
+                    map[cursor_y][cursor_x] = EMPTY;
+                    if(growth_stage[cursor_y][cursor_x]){
+                    	growth_stage[cursor_y][cursor_x] = 0;
+                    }
+                }
+                break;	    
             case 'f': case 'F':
                 if (inventory_food > 0 && player_health < MAX_HEALTH) {
                     inventory_food--;
@@ -189,6 +225,7 @@ int main() {
                     player_health++;
                 }
                 break;
+
         }
 
         usleep(50000);
