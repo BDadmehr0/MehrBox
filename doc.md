@@ -54,6 +54,9 @@
 | Space | Place selected tile |
 | E | Collect food (when on Food tile) |
 | F | Eat food (consumes 1 from inventory) |
+| D | Delete tile (Soil, Plant, Water) |
+| R | Reset map (Food tiles included) |
+| Y | confirm map Reset |
 | Q | Quit game |
 
 ## Game Rules
