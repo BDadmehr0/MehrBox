@@ -46,7 +46,7 @@ Manage your farm by planting crops, collecting food, and maintaining your health
 ## Requirements
 
 - Linux/Unix system
-- ncurses library ([How to install?](https://github.com/mirror/ncurses/blob/master/INSTALL)
+- ncurses library ([How to install?](https://github.com/mirror/ncurses/blob/master/INSTALL))
 - C compiler
 
 ## Compilation & Run
