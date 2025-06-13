@@ -14,17 +14,19 @@ Manage your farm by planting crops, collecting food, and maintaining your health
 
 ## Controls
 
-- **Arrow keys**: Move cursor
-- **W**: Select Water tile
-- **S**: Select Soil tile
-- **P**: Select Plant tile
-- **Space**: Place selected tile
-- **E**: Pick up food
-- **F**: Eat food (restores health)
-- **D**: Delete tile (Soil, Plant, Water)
-- **R**: Reset map
-- **Y**: Confirm map reset
-- **Q**: Quit game
+```
+├── Arrow keys: Move cursor
+├── W: Select Water tile
+├── S: Select Soil tile
+├── P: Select Plant tile
+├── Space: Place selected tile
+├── E: Pick up food
+├── F: Eat food (restores health)
+├── D: Delete tile (Soil, Plant, Water)
+├── R: Reset map
+│   └── Y: Confirm map reset
+└── Q: Quit game
+```
 
 ## Tile Types
 
